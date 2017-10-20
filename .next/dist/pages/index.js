@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _regenerator = require('babel-runtime/regenerator');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -16,57 +24,80 @@ var _link = require('next/dist/lib/link.js');
 
 var _link2 = _interopRequireDefault(_link);
 
+var _isomorphicUnfetch = require('isomorphic-unfetch');
+
+var _isomorphicUnfetch2 = _interopRequireDefault(_isomorphicUnfetch);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = '/var/www/learnNewJs/pages/index.js?entry';
 
 
-var PostLink = function PostLink(props) {
-  return _react2.default.createElement('li', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    }
-  }, _react2.default.createElement(_link2.default, { as: '/p/' + props.id, href: '/post?title=' + props.title, __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    }
-  }, _react2.default.createElement('a', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    }
-  }, props.title)));
-};
-
-exports.default = function () {
+var Index = function Index(props) {
   return _react2.default.createElement(_MyLayout2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 6
     }
   }, _react2.default.createElement('h1', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 7
     }
-  }, 'My Blog'), _react2.default.createElement('ul', {
+  }, 'Batman TV Shows'), _react2.default.createElement('ul', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 8
     }
-  }, _react2.default.createElement(PostLink, { title: 'Hello Next.js', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    }
-  }), _react2.default.createElement(PostLink, { title: 'Learn Next.js is awesome', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    }
-  }), _react2.default.createElement(PostLink, { title: 'Deploy apps with Zeit', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    }
+  }, props.shows.map(function (_ref) {
+    var show = _ref.show;
+    return _react2.default.createElement('li', { key: show.id, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      }
+    }, _react2.default.createElement(_link2.default, { as: '/p/' + show.id, href: '/post?id=' + show.id, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      }
+    }, _react2.default.createElement('a', {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      }
+    }, show.name)));
   })));
 };
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIkxheW91dCIsIkxpbmsiLCJQb3N0TGluayIsInByb3BzIiwiaWQiLCJ0aXRsZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBLEFBQU8sQUFBWTs7OztBQUNuQixBQUFPOzs7Ozs7Ozs7QUFFUCxJQUFNLFdBQVcsU0FBWCxBQUFXLFNBQUEsQUFBQyxPQUFEO3lCQUNmLGNBQUE7O2dCQUFBO2tCQUFBLEFBQ0U7QUFERjtBQUFBLEdBQUEsa0JBQ0UsQUFBQyxnQ0FBSyxZQUFVLE1BQWhCLEFBQXNCLElBQU0sdUJBQXFCLE1BQWpELEFBQXVEO2dCQUF2RDtrQkFBQSxBQUNFO0FBREY7cUJBQ0UsY0FBQTs7Z0JBQUE7a0JBQUEsQUFBSTtBQUFKO0FBQUEsV0FIVyxBQUNmLEFBQ0UsQUFDRSxBQUFVO0FBSGhCLEFBUUE7O2tCQUFlLFlBQUE7eUJBQ2IsQUFBQzs7Z0JBQUQ7a0JBQUEsQUFDRTtBQURGO0FBQUEsR0FBQSxrQkFDRSxjQUFBOztnQkFBQTtrQkFBQTtBQUFBO0FBQUEsS0FERixBQUNFLEFBQ0EsNEJBQUEsY0FBQTs7Z0JBQUE7a0JBQUEsQUFDRTtBQURGO0FBQUEsbUNBQ0UsQUFBQyxZQUFTLE9BQVYsQUFBZ0I7Z0JBQWhCO2tCQURGLEFBQ0UsQUFDQTtBQURBO29DQUNBLEFBQUMsWUFBUyxPQUFWLEFBQWdCO2dCQUFoQjtrQkFGRixBQUVFLEFBQ0E7QUFEQTtvQ0FDQSxBQUFDLFlBQVMsT0FBVixBQUFnQjtnQkFBaEI7a0JBTlMsQUFDYixBQUVFLEFBR0U7QUFBQTs7QUFOTiIsImZpbGUiOiJpbmRleC5qcz9lbnRyeSIsInNvdXJjZVJvb3QiOiIvdmFyL3d3dy9sZWFybk5ld0pzIn0=
+
+Index.getInitialProps = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+  var res, data;
+  return _regenerator2.default.wrap(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return (0, _isomorphicUnfetch2.default)('https://api.tvmaze.com/search/shows?q=batman');
+
+        case 2:
+          res = _context.sent;
+          _context.next = 5;
+          return res.json();
+
+        case 5:
+          data = _context.sent;
+
+          console.log('Show data fetched. Count: ' + data.length);
+
+          return _context.abrupt('return', {
+            shows: data
+          });
+
+        case 8:
+        case 'end':
+          return _context.stop();
+      }
+    }
+  }, _callee, this);
+}));
+
+exports.default = Index;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIkxheW91dCIsIkxpbmsiLCJmZXRjaCIsIkluZGV4IiwicHJvcHMiLCJzaG93cyIsIm1hcCIsInNob3ciLCJpZCIsIm5hbWUiLCJnZXRJbml0aWFsUHJvcHMiLCJyZXMiLCJqc29uIiwiZGF0YSIsImNvbnNvbGUiLCJsb2ciLCJsZW5ndGgiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLEFBQU8sQUFBWTs7OztBQUNuQixBQUFPOzs7O0FBQ1AsQUFBTzs7Ozs7Ozs7O0FBRVAsSUFBTSxRQUFRLFNBQVIsQUFBUSxNQUFBLEFBQUMsT0FBRDt5QkFDWixBQUFDOztnQkFBRDtrQkFBQSxBQUNFO0FBREY7QUFBQSxHQUFBLGtCQUNFLGNBQUE7O2dCQUFBO2tCQUFBO0FBQUE7QUFBQSxLQURGLEFBQ0UsQUFDQSxvQ0FBQSxjQUFBOztnQkFBQTtrQkFBQSxBQUNHO0FBREg7QUFBQSxXQUNHLEFBQU0sTUFBTixBQUFZLElBQUksZ0JBQUE7UUFBQSxBQUFFLFlBQUYsQUFBRTsyQkFDakIsY0FBQSxRQUFJLEtBQUssS0FBVCxBQUFjO2tCQUFkO29CQUFBLEFBQ0U7QUFERjtLQUFBLGtCQUNFLEFBQUMsZ0NBQUssWUFBVSxLQUFoQixBQUFxQixJQUFNLG9CQUFrQixLQUE3QyxBQUFrRDtrQkFBbEQ7b0JBQUEsQUFDRTtBQURGO3VCQUNFLGNBQUE7O2tCQUFBO29CQUFBLEFBQUk7QUFBSjtBQUFBLFlBSFcsQUFDZixBQUNFLEFBQ0UsQUFBUztBQVBQLEFBQ1osQUFFRSxBQUNHO0FBSlA7O0FBZUEsTUFBQSxBQUFNLDJGQUFrQixtQkFBQTtXQUFBO2dFQUFBO2NBQUE7dUNBQUE7YUFBQTswQkFBQTtpQkFDSixpQ0FESSxBQUNKLEFBQU07O2FBQWxCO0FBRGdCLHlCQUFBOzBCQUFBO2lCQUVILElBRkcsQUFFSCxBQUFJOzthQUFqQjtBQUZnQiwwQkFJdEI7O2tCQUFBLEFBQVEsbUNBQWlDLEtBSm5CLEFBSXRCLEFBQThDOzs7bUJBSnhCLEFBTWYsQUFDRTtBQURGLEFBQ0w7O2FBUG9CO2FBQUE7MEJBQUE7O0FBQUE7Y0FBQTtBQUF4QixBQVdBOztrQkFBQSxBQUFlIiwiZmlsZSI6ImluZGV4LmpzP2VudHJ5Iiwic291cmNlUm9vdCI6Ii92YXIvd3d3L2xlYXJuTmV3SnMifQ==
